@@ -12,6 +12,7 @@ use std::path::PathBuf;
 use std::process::Command;
 use std::sync::{Arc, Mutex};
 use std::thread;
+use std::time::Duration;
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -71,6 +72,8 @@ fn main() {
                 monitoring.insert(pid);
             }
         }
+
+        thread::sleep(Duration::from_millis(1000));
     }
 }
 
