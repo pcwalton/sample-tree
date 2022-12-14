@@ -86,6 +86,7 @@ fn sample(args: &Args, pid: u32, name: &str) {
         "-file",
         &out_path.to_string_lossy(),
         &pid.to_string(),
+        "9999999",
     ]);
     thread::spawn(move || command.spawn().unwrap().wait());
 }
